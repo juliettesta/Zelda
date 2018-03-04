@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Monstre
+  - Cle
+  - Coeur
+  - Groscoeur
+  - Epee
+  - MonstreArme
+  - PlayerArme
   layers:
   - Default
   - TransparentFX

@@ -46,16 +46,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asset à trier\Link + Montres morves\Script\ScreenShot.cs" />
-     <Compile Include="Assets\Player\PlayerController.cs" />
-     <Compile Include="Assets\Player\Souris.cs" />
-     <Compile Include="Assets\Player\Stats&amp;Combat\CharacterCombat.cs" />
-     <Compile Include="Assets\Player\Stats&amp;Combat\CharacterStats.cs" />
-     <Compile Include="Assets\Player\Stats&amp;Combat\MonstersStats.cs" />
-     <Compile Include="Assets\Player\Stats&amp;Combat\PlayerStats.cs" />
-     <Compile Include="Assets\Player\Tir.cs" />
-     <Compile Include="Assets\Player\destroyBullet.cs" />
-     <Compile Include="Assets\Player\footSteps.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\CharacterStats.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\DetectionCible.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstersStats.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstreCollision.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MouvementMonstre.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\TirMonstre.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\PlayerCollision.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\PlayerController.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\PlayerStats.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\Souris.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\Tir.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\destroyBullet.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\footSteps.cs" />
      <None Include="Assets\Asset à trier\Arbres barriere\FreeLowPolyPack\readme.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
