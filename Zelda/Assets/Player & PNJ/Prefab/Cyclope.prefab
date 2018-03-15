@@ -449,7 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4103985089889210}
   - component: {fileID: 137100016470209258}
-  - component: {fileID: 135343798546339552}
+  - component: {fileID: 136197838993734920}
   m_Layer: 0
   m_Name: ArmeMonstre
   m_TagString: MonstreArme
@@ -1310,9 +1310,10 @@ MonoBehaviour:
   poursuite: 0
   pause: 0
   attack: 0
+  attackEffectuee: 0
   anim: {fileID: 0}
---- !u!135 &135343798546339552
-SphereCollider:
+--- !u!136 &136197838993734920
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -1320,9 +1321,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.82154727
-  m_Center: {x: -0.77718693, y: -0.88131523, z: -1.7919033}
+  m_Radius: 0.7483223
+  m_Height: 1.877721
+  m_Direction: 1
+  m_Center: {x: -0.74782825, y: -0.9827282, z: -1.9678782}
 --- !u!137 &137100016470209258
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -10,11 +10,11 @@ public class MouvementMonstre : MonoBehaviour {
     public bool poursuite = false;
     public bool pause = true;
     public bool attack = false;
+    public bool attackEffectuee = false;
     public Animator anim;
     private float startTime = 0.0f;
     int temps = 3;
 
-    private TirMonstre tir;
 
     void Awake()
     {
@@ -29,7 +29,6 @@ public class MouvementMonstre : MonoBehaviour {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         pause = false;
         anim = GetComponent<Animator>();
-        tir = GetComponent<TirMonstre>();
         startTime = Time.time;
     }
 
@@ -40,15 +39,14 @@ public class MouvementMonstre : MonoBehaviour {
         {
             if (startTime + temps < Time.time)
             {
+                attackEffectuee = true;
                 anim.SetTrigger("Attack");
-                tir.attack = true;
                 startTime = Time.time;
                 temps = Random.Range(2, 4);
             }
             else
             {
                 miseEnAttente();
-                tir.attack = false;
             }
         }
         else if (poursuite)

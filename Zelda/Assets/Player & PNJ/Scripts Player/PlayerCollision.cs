@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour {
 
     PlayerStats player;
+    private float startTime = 0.0f;
 
     void Start()
     {
         player = GetComponent<PlayerStats>();
+        startTime = Time.time;
         //Debug.Log("Player possede " + player.maxEnergie);
     }
     void Update()
@@ -19,10 +21,16 @@ public class PlayerCollision : MonoBehaviour {
     
     void OnCollisionEnter(Collision Col)
     {
+
         if (Col.gameObject.tag == "MonstreArme")
         {
-            player.estAttaque();
-            Debug.Log("Le monstre a touché le joueur, il lui reste " + player.actuelEnergie);
+            if (startTime + 1 < Time.time)
+            {
+                startTime = Time.time;
+                player.estAttaque();
+                Debug.Log("Le monstre a touché le joueur, il lui reste " + player.actuelEnergie);
+            }
+
         }
         else if (Col.gameObject.tag == "Cle")
         {

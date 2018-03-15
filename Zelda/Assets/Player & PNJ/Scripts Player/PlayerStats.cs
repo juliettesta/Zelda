@@ -10,7 +10,7 @@ public class PlayerStats : characterStats {
 
     public void estAttaque()
     {
-        takeDamage(0.25);
+        takeDamage(0.5);
         //JOUER LE SON
         //ENLEVER UN DEMI COEUR A L'AFFICHAGE ECRAN
     }

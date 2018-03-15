@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4179817336502238}
-  - component: {fileID: 54096298777766832}
+  - component: {fileID: 54860821134687542}
   - component: {fileID: 136758337219248434}
   - component: {fileID: 95842864935607276}
   - component: {fileID: 195342045845152460}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 114472154504449626}
   m_Layer: 0
   m_Name: Slime
-  m_TagString: MonstreArme
+  m_TagString: Monstre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961287065825210}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2.87, y: 0, z: 2.63}
+  m_LocalPosition: {x: 2.87, y: 0, z: 3.34}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4757071914710056}
@@ -194,7 +194,7 @@ Transform:
   m_Father: {fileID: 4144675170005240}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54096298777766832
+--- !u!54 &54860821134687542
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4449051c43a54149b5f142fc6464f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceDetect: 3
+  distanceDetect: 4
   distanceAttack: 1
   detecter: 0
   decroche: 2
@@ -252,10 +252,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1edc7130fec064890cc032047eb7fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 4244962538472862, guid: 858d56eac75a09b4dbf2723a4f759eb2, type: 2}
+  player: {fileID: 0}
   poursuite: 0
   pause: 1
   attack: 0
+  attackEffectuee: 0
   anim: {fileID: 0}
 --- !u!114 &114824298960452904
 MonoBehaviour:
@@ -279,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dee11870b392904e89ec6e811997332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnergie: 20
+  maxEnergie: 2000
 --- !u!136 &136402877058115200
 CapsuleCollider:
   m_ObjectHideFlags: 1

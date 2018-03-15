@@ -46,12 +46,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Asset à trier\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+     <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csColorChangerinSampleScene.cs" />
+     <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csDemoScenceControl.cs" />
+     <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csMouseOrbit.cs" />
+     <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csParticleMake.cs" />
+     <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csRotate.cs" />
+     <Compile Include="Assets\Environnement\CollisionCoffre.cs" />
+     <Compile Include="Assets\Environnement\CollisionHerbe.cs" />
+     <Compile Include="Assets\Environnement\CollisionInterrupteur.cs" />
+     <Compile Include="Assets\Environnement\CollisionJarre.cs" />
+     <Compile Include="Assets\Environnement\CollisionPasserelle.cs" />
+     <Compile Include="Assets\Environnement\CollisionPillier.cs" />
+     <Compile Include="Assets\Environnement\CollisionPorteBoss.cs" />
+     <Compile Include="Assets\Environnement\CollisionReinitialisation.cs" />
+     <Compile Include="Assets\Environnement\Island\Scripts\CharacterMovement.cs" />
+     <Compile Include="Assets\Environnement\Island\Scripts\FixedTiling.cs" />
+     <Compile Include="Assets\Environnement\Island\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Environnement\Island\Scripts\WaterScroller.cs" />
+     <Compile Include="Assets\Environnement\OpenChest.cs" />
+     <Compile Include="Assets\Environnement\Temple\RPGPackFree\Scripts\BowString.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CharacterStats.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\CollisionPNJ.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\ColliderAttackMonstre.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\DetectionCible.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstersStats.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstreCollision.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MouvementMonstre.cs" />
-     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\TirMonstre.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Player\ColliderAttack.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\PlayerCollision.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\PlayerController.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\PlayerStats.cs" />
@@ -59,7 +81,8 @@
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\Tir.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\destroyBullet.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\footSteps.cs" />
-     <None Include="Assets\Asset à trier\Arbres barriere\FreeLowPolyPack\readme.txt" />
+     <None Include="Assets\Asset à trier\Models\Key\readME keys.txt" />
+     <None Include="Assets\Textures sol ciel\BOXOPHOBIC\Skybox - Cubemap Extended\Shaders\Skybox - Cubemap Extended.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
