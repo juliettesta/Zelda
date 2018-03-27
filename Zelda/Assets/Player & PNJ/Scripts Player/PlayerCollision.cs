@@ -18,10 +18,22 @@ public class PlayerCollision : MonoBehaviour {
         
     }
 
+    public static GameObject FindObject ( GameObject parent, string name)
+    {
+        Transform[] trs = parent.GetComponentsInChildren<Transform>(true);
+        foreach (Transform t in trs)
+        {
+            if (t.name == name)
+            {
+                return t.gameObject;
+            }
+        }
+        return null;
+    }
     
     void OnCollisionEnter(Collision Col)
     {
-
+        //Debug.Log("Collision personnage");
         if (Col.gameObject.tag == "MonstreArme")
         {
             if (startTime + 1 < Time.time)
@@ -32,26 +44,52 @@ public class PlayerCollision : MonoBehaviour {
             }
 
         }
-        else if (Col.gameObject.tag == "Cle")
+        if (Col.gameObject.tag == "eau") // Il perd un demi points de vie, à chaque fois qu'il va dans l'eau
         {
-                player.nbrCle += 1;
-                //AFFICHER ECRAN
-                Destroy(gameObject);
+            if (startTime + 5 < Time.time)
+            {
+                startTime = Time.time;
+                player.estAttaque();
+                //Debug.Log("Le joueur est dans l'eau, il lui reste " + player.actuelEnergie);
+            }     
         }
         else if (Col.gameObject.tag == "Coeur")
         {
+            //Debug.Log("Collision coeur ok");
             if (player.actuelEnergie + 1 <= player.maxEnergie) player.actuelEnergie += 1;
             else player.actuelEnergie = player.maxEnergie;
-            // AFFICHER A L'ECRAN LES COEURS
-            Destroy(gameObject);
+            
+            //Affichage
+            if (player.enVie) { 
+                if (player.actuelEnergie % 1 == 0) // Si la vie actuelle est entière
+                {
+                    GameObject coeurDesac = FindObject(player.parentCanvas, "coeurDemi" + (player.actuelEnergie));
+                    coeurDesac.SetActive(true);
+                    GameObject coeurDesac2 = FindObject(player.parentCanvas, "coeur" + (player.actuelEnergie));
+                    coeurDesac2.SetActive(true);
+                }
+                else // la vie a actuelle à 0.5
+                {
+                    GameObject coeurDesac = FindObject(player.parentCanvas, "coeur" + (player.actuelEnergie - 0.5));
+                    coeurDesac.SetActive(true);
+                    GameObject coeurDesac2 = FindObject(player.parentCanvas, "coeurDemi" + (player.actuelEnergie + 0.5));
+                    coeurDesac2.SetActive(true);
+                }
+            }
+            
+            //Destruction coeur
+            Destroy(Col.gameObject);
         }
-        else if (Col.gameObject.tag == "GrosCoeur")
+        else if (Col.gameObject.tag == "Groscoeur")
         {
             player.maxEnergie += 1;
+            //Debug.Log("Collision Gros coeur ok : " + player.maxEnergie);
             player.actuelEnergie = player.maxEnergie;
-            //AFFICHER ECRAN
-            Destroy(gameObject);
+            Destroy(Col.gameObject);
         }
+
+        //A VERIFIER
+
         else if (Col.gameObject.tag == "Epee")
         {
             //sera dans un coffre ou par terre ?

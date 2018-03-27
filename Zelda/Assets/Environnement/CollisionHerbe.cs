@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class CollisionHerbe : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    public GameObject coeur;
+    public GameObject Monstre;
+    public GameObject herbe;
 
-    }
+	
     void OnCollisionEnter( Collision Col)
     {
         if (Col.gameObject.tag == "PlayerArme")
         {
-            Destroy(Col.gameObject);
-            Debug.Log("Herbe détruite");
+            int rdn = Random.Range(0, 10);
+            if (rdn == 0)
+            {
+                Monstre.SetActive(true);
+            }
+            else if (0 < rdn && rdn < 4)
+            {
+                coeur.SetActive(true);
+            }
+            Destroy(gameObject);
+            //Debug.Log("aléatoire : " + rdn);
         }
     }
     

@@ -11,6 +11,8 @@ TagManager:
   - Epee
   - MonstreArme
   - PlayerArme
+  - eau
+  - EpeeTrouvee
   layers:
   - Default
   - TransparentFX

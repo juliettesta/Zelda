@@ -21,9 +21,13 @@ public class PlayerController : MonoBehaviour {
     public GameObject epee;
     public AudioClip sonAttackEpee; //A AJOUTER
 
+    PlayerStats joueur;
+
+
     // Use this for initialization
     void Start() {
         player = GetComponent<CharacterController>();
+        joueur =  GetComponent<PlayerStats>();
         anim = GetComponent<Animator>();
 	}
 	
@@ -49,24 +53,36 @@ public class PlayerController : MonoBehaviour {
         player.Move(directionDeplacement * Time.deltaTime);
 
         //Faire la marche arrière !!! + ANIMATION
-
-        //ATTENTION METTRE SUIVANT C QU'ON POSSEDE OU NON L'ARME +SI AUCUNE ARME, IL A RIEN SINON IL A AU MOINS UNE ARME
+       
         // METTRE LE BOUCLIER DANS LA MAIN GAUCHE ET IK??
         //Changer Armes
-        if (Input.GetKeyDown(KeyCode.A))
+        if (joueur.possedeEpee && !joueur.possedeBaton)
         {
-            
-            if (epee.activeSelf == true)
-            {
-                baton.SetActive(true);
-                epee.SetActive(false);
-            }
-            else
-            {
-                baton.SetActive(false);
-                epee.SetActive(true);
-            }
+            baton.SetActive(false);
+            epee.SetActive(true);
+            joueur.epee.SetActive(true); // affiche l'épée à l'écran
         }
+        else if (joueur.possedeEpee && joueur.possedeBaton)
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                if (epee.activeSelf == true)
+                {
+                    baton.SetActive(true);
+                    joueur.baton.SetActive(true);
+                    epee.SetActive(false);
+                    joueur.epee.SetActive(false);
+                }
+                else
+                {
+                    baton.SetActive(false);
+                    joueur.baton.SetActive(false);
+                    epee.SetActive(true);
+                    joueur.epee.SetActive(true);
+                }
+            }
+
+            }
 
         //ATTAQUE
         //AJOUTER SON EPEE
@@ -80,7 +96,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-            //Saut
+         //Saut
             if (Input.GetKeyDown(KeyCode.Space)&& player.isGrounded) // Input.GetButton("Jump") 
         {
             //directionDeplacement.y = jumpSpeed;
