@@ -66,13 +66,14 @@
      <Compile Include="Assets\Environnement\Island\Scripts\MouseLook.cs" />
      <Compile Include="Assets\Environnement\Island\Scripts\WaterScroller.cs" />
      <Compile Include="Assets\Environnement\OpenChest.cs" />
+     <Compile Include="Assets\Environnement\Play.cs" />
      <Compile Include="Assets\Environnement\Temple\RPGPackFree\Scripts\BowString.cs" />
+     <Compile Include="Assets\GlobalControl\GlobalControl.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CharacterStats.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CollisionEpee.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CollisionPNJ.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CollisionPNJEntree.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CollisionPNJMaison.cs" />
-     <Compile Include="Assets\Player &amp; PNJ\DontDestroyOnLoad.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\ColliderAttackMonstre.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\DetectionCible.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstersStats.cs" />

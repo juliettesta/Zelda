@@ -25,6 +25,18 @@ public class PlayerStats : characterStats {
 
     public GameObject parentCanvas;
 
+    
+    public void SavePlayer()
+    {
+        GlobalControl.Instance.possedeCle = possedeCle;
+        GlobalControl.Instance.possedeEpee = possedeEpee;
+        GlobalControl.Instance.possedeBaton = possedeBaton;
+        GlobalControl.Instance.estDansTemple = estDansTemple;
+        GlobalControl.Instance.enVie = enVie;
+        GlobalControl.Instance.maxEnergie = maxEnergie;
+        GlobalControl.Instance.actuelEnergie = actuelEnergie;
+        GlobalControl.Instance.maxCoeur = maxCoeur;
+    }
 
     void Start()
     {
@@ -55,6 +67,16 @@ public class PlayerStats : characterStats {
             newCoeur.transform.SetParent(parentCanvas.transform);
             newCoeur.name = "coeur" + (i + 1);
         }
+
+        // Recupération des données
+        possedeCle = GlobalControl.Instance.possedeCle;
+        possedeEpee = GlobalControl.Instance.possedeEpee;
+        possedeBaton = GlobalControl.Instance.possedeBaton;
+        estDansTemple = GlobalControl.Instance.estDansTemple;
+        enVie = GlobalControl.Instance.enVie;
+        maxEnergie = GlobalControl.Instance.maxEnergie;
+        actuelEnergie = GlobalControl.Instance.actuelEnergie;
+        maxCoeur = GlobalControl.Instance.maxCoeur;
 
     }
 

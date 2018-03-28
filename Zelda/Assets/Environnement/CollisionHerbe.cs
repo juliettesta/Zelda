@@ -18,7 +18,7 @@ public class CollisionHerbe : MonoBehaviour {
             {
                 Monstre.SetActive(true);
             }
-            else if (0 < rdn && rdn < 4)
+            else if (0 < rdn && rdn < 3)
             {
                 coeur.SetActive(true);
             }

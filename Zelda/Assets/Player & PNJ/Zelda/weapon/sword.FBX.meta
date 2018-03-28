@@ -3,7 +3,12 @@ guid: c0c6439e3f0b1d347b73a807b78f7d37
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: sword
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
