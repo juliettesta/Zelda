@@ -87,6 +87,12 @@ public class PlayerCollision : MonoBehaviour {
             player.actuelEnergie = player.maxEnergie;
             Destroy(Col.gameObject);
         }
+        else if (Col.gameObject.tag == "chgmtScene")
+        {
+            player.SavePlayer();
+        }
+
+
 
         //A VERIFIER
 

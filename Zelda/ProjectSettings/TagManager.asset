@@ -13,6 +13,7 @@ TagManager:
   - PlayerArme
   - eau
   - EpeeTrouvee
+  - chgmtScene
   layers:
   - Default
   - TransparentFX

@@ -5037,6 +5037,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9da8bceb96cc9c94ea2ce6b247d7475a, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &764607584 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1367360566350096, guid: 9da8bceb96cc9c94ea2ce6b247d7475a,
+    type: 2}
+  m_PrefabInternal: {fileID: 764607583}
+--- !u!114 &764607585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764607584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb71c067225d8a4d9b193b008d79113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possedeCle: 0
+  possedeEpee: 0
+  possedeBaton: 0
+  estDansTemple: 0
+  enVie: 1
+  maxEnergie: 5
+  actuelEnergie: 5
+  maxCoeur: 5
 --- !u!1 &765555103
 GameObject:
   m_ObjectHideFlags: 0
