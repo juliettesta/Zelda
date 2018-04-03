@@ -6,7 +6,7 @@ public class CollisionHerbe : MonoBehaviour {
 
     public GameObject coeur;
     public GameObject Monstre;
-    public GameObject herbe;
+    public GameObject herbe; // inutile?
 
 	
     void OnCollisionEnter( Collision Col)

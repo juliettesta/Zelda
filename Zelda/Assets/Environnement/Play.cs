@@ -5,8 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class Play : MonoBehaviour {
 
-	public void ChangeScene( string sceneName)
+    public GameObject Start;
+    public GameObject Instructions;
+
+    public void ChangeScene( string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void instructions(bool afficher)
+    {
+        if (afficher)
+        {
+            Start.SetActive(false);
+            Instructions.SetActive(true);
+
+        }
+        else
+        {
+            Start.SetActive(true);
+            Instructions.SetActive(false);
+        }
+               
+    }
+    public void quitterJeu()
+    {
+        Application.Quit();
+    }
+
+
 }

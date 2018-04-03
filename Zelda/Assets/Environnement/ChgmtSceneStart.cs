@@ -5,12 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ChgmtSceneStart : MonoBehaviour {
 
-
-
-    void start()
-    {
-        
-    }
     void OnCollisionEnter(Collision Col)
     {
         if (Col.gameObject.tag == "Player")

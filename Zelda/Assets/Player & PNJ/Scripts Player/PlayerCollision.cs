@@ -35,16 +35,16 @@ public class PlayerCollision : MonoBehaviour {
     {
         //Debug.Log("Collision personnage");
         if (Col.gameObject.tag == "MonstreArme")
-        {
-            if (startTime + 1 < Time.time)
+        { 
+            if (startTime + 1.9 < Time.time)
             {
                 startTime = Time.time;
                 player.estAttaque();
-                Debug.Log("Le monstre a touché le joueur, il lui reste " + player.actuelEnergie);
+                Debug.Log("Joueur touché, il lui reste " + player.actuelEnergie);
             }
 
         }
-        if (Col.gameObject.tag == "eau") // Il perd un demi points de vie, à chaque fois qu'il va dans l'eau
+        if (Col.gameObject.tag == "eau") // Il perd un demi points de vie toutes les 5s
         {
             if (startTime + 5 < Time.time)
             {
@@ -52,6 +52,14 @@ public class PlayerCollision : MonoBehaviour {
                 player.estAttaque();
                 //Debug.Log("Le joueur est dans l'eau, il lui reste " + player.actuelEnergie);
             }     
+        }
+        if (Col.gameObject.tag == "Trou") // Il perd un demi points de vie toutes les secondes (Trou + Lave)
+        {
+            if (startTime + 1 < Time.time)
+            {
+                startTime = Time.time;
+                player.estAttaque();   
+            }
         }
         else if (Col.gameObject.tag == "Coeur")
         {
@@ -91,53 +99,18 @@ public class PlayerCollision : MonoBehaviour {
         {
             player.SavePlayer();
         }
-
-
-
-        //A VERIFIER
-
-        else if (Col.gameObject.tag == "Epee")
-        {
-            //sera dans un coffre ou par terre ?
-                //Ajout aux objets pouvant être utilisé
-                //Appuyer sur a pour changer d'arme (aide)
-            Destroy(gameObject);
-
-        }
         else if (Col.gameObject.tag == "Baton")
         {
-            // Sera dans un coffre
-                //Ajout aux armes pouvant etre utilisé
-                //appuyer sur a pour changer d'arme (aide)
-            Destroy(gameObject);
+            player.possedeBaton = true;
+            Destroy(Col.gameObject);
         }
-        else if (Col.gameObject.tag == "Coffre")
+        else if (Col.gameObject.tag == "Cle")
         {
-            //Ouvrir coffre (animation + son)
-            //Faire apparait l'objet
-            //Incrémenté l'inventaire, actions suivant objet, coeur, groscoeur ou clé, clé bosse
-            //Afficher texte "Wow tu as trouvé nom du tag de l'objet"
-            //Le joueur appuie sur entré ou une touche?
-            //Faire disparaitre l'objet
-            
-            /*objet.SetActive(true);
-            if (objet.name == "cle")
-            {
-                nbrCle += 1;
-                Destroy(objet, 5f);
-                //AFFICHER ECRAN + objet disparait apres quelques secondes
-            }
-            else if (objet.name == "grosCoeur")
-            {
-                maxEnergie += 1;
-                actuelEnergie = maxEnergie;
-                //AFFICHER ECRAN 
-                Destroy(objet, 5f);
-            }*/
+            player.possedeCle = true;
+            Destroy(Col.gameObject);
         }
-        /*else if (Col.gameObject.tag == "CleBoss")
-        {
+       
 
-        }*/
+        
     }
 }

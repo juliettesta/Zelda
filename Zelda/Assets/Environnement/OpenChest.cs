@@ -11,6 +11,7 @@ public class OpenChest : MonoBehaviour {
 
     public bool closing;
     public bool opening;
+    public GameObject objet;
 
     public float speed = 0.5f;
 
@@ -41,6 +42,10 @@ public class OpenChest : MonoBehaviour {
             if (factor < 0.0f)
             {
                 factor = 0.0f;
+                if (objet != null)
+                {
+                    objet.SetActive(true);
+                }
             }
         }
 

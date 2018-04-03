@@ -39,8 +39,8 @@ public class MouvementMonstre : MonoBehaviour {
         {
             if (startTime + temps < Time.time)
             {
-                attackEffectuee = true;
                 anim.SetTrigger("Attack");
+                attackEffectuee = true;
                 startTime = Time.time;
                 temps = Random.Range(2, 4);
             }

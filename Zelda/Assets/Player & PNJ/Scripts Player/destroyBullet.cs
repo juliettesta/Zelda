@@ -4,19 +4,10 @@ using UnityEngine;
 
 public class destroyBullet : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnCollisionEnter(Collision Col)
     {
-        Debug.Log("collision ok");
+        //Debug.Log("collision ok");
         Destroy(gameObject);
     }
 }

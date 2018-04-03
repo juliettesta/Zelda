@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class CollisionReinitialisation : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject cle;
+    public GameObject parentPilliers;
+
+    void OnCollisionEnter(Collision Col)
+    {
+        if (Col.gameObject.tag == "PlayerArme")
+        {
+            if (cle != null)
+            {
+                cle.GetComponent<Cle>().initialiser();
+            }
+
+            Transform[] trs = parentPilliers.GetComponentsInChildren<Transform>(true);
+            for (int i=0; i< trs.Length; i++)
+            {
+                trs[i].gameObject.SetActive(true);
+            }
+
+        }
+    }
+
 }

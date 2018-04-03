@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class CollisionJarre : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject coeur;
+
+    void OnCollisionEnter(Collision Col)
+    {
+        if (Col.gameObject.tag == "PlayerArme")
+        {
+            int rdn = Random.Range(0, 10);
+            if (rdn < 8)
+            {
+                coeur.SetActive(true);
+            }
+            Destroy(gameObject);
+            //Debug.Log("aléatoire : " + rdn);
+        }
+    }
 }

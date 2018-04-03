@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/PreStart.unity
     guid: ecbdcef06abbd6a4b85dd063ad298d34
   - enabled: 1
+    path: Assets/Scenes/Histoire.unity
+    guid: f80a0acc95680c549983d3529b8acdb7
+  - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: c027a1fd0270a4f45b159c4d043b0cc8
   - enabled: 1
     path: Assets/Scenes/Temple.unity
     guid: 6c944fb1c0be1dd4d9e89ae79f879e41
+  - enabled: 1
+    path: Assets/Scenes/Fin.unity
+    guid: 0160cc170d2ee36479b5ec154c04c6a7

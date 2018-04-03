@@ -25,7 +25,7 @@ public class MonstreCollision : MonoBehaviour {
        
         if (Col.gameObject.tag == "PlayerArme")
         {
-            if (startTime + 0.3 < Time.time)
+            if (startTime + 0.4 < Time.time)
             {
                 startTime = Time.time;
                 monstre.estAttaque();

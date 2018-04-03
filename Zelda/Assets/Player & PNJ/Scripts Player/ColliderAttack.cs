@@ -26,7 +26,7 @@ public class ColliderAttack : MonoBehaviour {
         }
         else
         {
-            if (startTime + 2 < Time.time && box.enabled == true)
+            if (startTime + 1 < Time.time && box.enabled == true)
             {
                 box.enabled = false;
                 //Debug.Log("Collider terminé");

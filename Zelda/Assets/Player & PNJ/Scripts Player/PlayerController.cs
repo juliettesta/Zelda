@@ -34,112 +34,121 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //Déplacement et rotation du personnage          
-        if (player.isGrounded)
+        //Si le personnage est en vie
+        if (GetComponent<PlayerStats>().enVie)
         {
-            directionDeplacement = new Vector3(0, 0, Input.GetAxis("Vertical"));
-            directionDeplacement = transform.TransformDirection(directionDeplacement);
+            //Déplacement et rotation du personnage          
+            if (player.isGrounded)
+            {
+                directionDeplacement = new Vector3(0, 0, Input.GetAxis("Vertical"));
+                directionDeplacement = transform.TransformDirection(directionDeplacement);
 
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                directionDeplacement *=runSpeed;
-            }
-            else
-            {
-                directionDeplacement *= walkSpeed;
-            }
-        }
-        transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
-        player.Move(directionDeplacement * Time.deltaTime);
-
-        //Faire la marche arrière !!! + ANIMATION
-       
-        // METTRE LE BOUCLIER DANS LA MAIN GAUCHE ET IK??
-        //Changer Armes
-        if (joueur.possedeEpee && !joueur.possedeBaton)
-        {
-            baton.SetActive(false);
-            epee.SetActive(true);
-            joueur.epee.SetActive(true); // affiche l'épée à l'écran
-        }
-        else if (joueur.possedeEpee && joueur.possedeBaton)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                if (epee.activeSelf == true)
+                if (Input.GetKey(KeyCode.LeftShift))
                 {
-                    baton.SetActive(true);
-                    joueur.baton.SetActive(true);
-                    epee.SetActive(false);
-                    joueur.epee.SetActive(false);
+                    directionDeplacement *= runSpeed;
                 }
                 else
                 {
-                    baton.SetActive(false);
-                    joueur.baton.SetActive(false);
-                    epee.SetActive(true);
-                    joueur.epee.SetActive(true);
+                    directionDeplacement *= walkSpeed;
+                }
+            }
+            transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
+            player.Move(directionDeplacement * Time.deltaTime);
+
+            //Faire la marche arrière !!! + ANIMATION
+
+            // METTRE LE BOUCLIER DANS LA MAIN GAUCHE ET IK??
+            //Changer Armes
+            if (joueur.possedeEpee && !joueur.possedeBaton)
+            {
+                baton.SetActive(false);
+                epee.SetActive(true);
+                joueur.epee.SetActive(true); // affiche l'épée à l'écran
+            }
+            else if (joueur.possedeEpee && joueur.possedeBaton)
+            {
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (epee.activeSelf == true)
+                    {
+                        baton.SetActive(true);
+                        joueur.baton.SetActive(true);
+                        epee.SetActive(false);
+                        joueur.epee.SetActive(false);
+                    }
+                    else
+                    {
+                        baton.SetActive(false);
+                        joueur.baton.SetActive(false);
+                        epee.SetActive(true);
+                        joueur.epee.SetActive(true);
+                    }
+                }
+
+            }
+
+            //ATTAQUE
+            //AJOUTER SON EPEE
+            if (Input.GetButtonDown("Fire1"))
+            {
+                if (baton.activeSelf == true) anim.SetTrigger("AttackB");
+                if (epee.activeSelf == true)
+                {
+                    GetComponent<AudioSource>().PlayOneShot(sonAttackEpee);
+                    anim.SetTrigger("AttackE");
                 }
             }
 
-            }
-
-        //ATTAQUE
-        //AJOUTER SON EPEE
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (baton.activeSelf == true) anim.SetTrigger("AttackB");
-            if (epee.activeSelf == true)
+            //Saut
+            if (Input.GetKeyDown(KeyCode.Space) && player.isGrounded) // Input.GetButton("Jump") 
             {
-                GetComponent<AudioSource>().PlayOneShot(sonAttackEpee);
-                anim.SetTrigger("AttackE");
+                //directionDeplacement.y = jumpSpeed;
+                transform.Translate(Vector3.up * jumpHigh); // non fluide au départ
+                anim.SetTrigger("Jump");
+                GetComponent<AudioSource>().PlayOneShot(sonJump);
             }
-        }
-
-         //Saut
-            if (Input.GetKeyDown(KeyCode.Space)&& player.isGrounded) // Input.GetButton("Jump") 
-        {
-            //directionDeplacement.y = jumpSpeed;
-            transform.Translate(Vector3.up * jumpHigh); // non fluide au départ
-            anim.SetTrigger("Jump");
-            GetComponent<AudioSource>().PlayOneShot(sonJump);
-        }
 
 
 
-        //Gravite
-        if (!player.isGrounded) directionDeplacement.y -= gravite * Time.deltaTime;
+            //Gravite
+            if (!player.isGrounded) directionDeplacement.y -= gravite * Time.deltaTime;
 
-        //Marcher
-        if (Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.LeftShift))
-        {
-            anim.SetBool("Walk", true);
-            anim.SetBool("Run", false); 
-        }
-        //Courrir
-        if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
-        {
-            anim.SetBool("Walk", false);
-            anim.SetBool("Run", true);
-        }
-        //On revient à l'arrêt
-        if (!Input.GetKey(KeyCode.Z))
-        {
-            anim.SetBool("Walk", false);
-            anim.SetBool("Run", false);
-        }
-        //On tourne à droite
-        if (Input.GetKey(KeyCode.D))
-        {
-            anim.SetBool("TurnRight", true);
-        }
-        else { anim.SetBool("TurnRight", false); }
+            //Marcher
+            if (Input.GetKey(KeyCode.Z) && !Input.GetKey(KeyCode.LeftShift))
+            {
+                anim.SetBool("Walk", true);
+                anim.SetBool("Run", false);
+            }
+            //Courrir
+            if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.LeftShift))
+            {
+                anim.SetBool("Walk", false);
+                anim.SetBool("Run", true);
+            }
+            //On revient à l'arrêt
+            if (!Input.GetKey(KeyCode.Z))
+            {
+                anim.SetBool("Walk", false);
+                anim.SetBool("Run", false);
+            }
+            //On tourne à droite
+            if (Input.GetKey(KeyCode.D))
+            {
+                anim.SetBool("TurnRight", true);
+            }
+            else { anim.SetBool("TurnRight", false); }
 
-        //On tourne à gauche
-        if (Input.GetKey(KeyCode.Q))
-        {
-            anim.SetBool("TurnLeft", true);
+            //On tourne à gauche
+            if (Input.GetKey(KeyCode.Q))
+            {
+                anim.SetBool("TurnLeft", true);
+            }
+            else { anim.SetBool("TurnLeft", false); }
         }
-        else { anim.SetBool("TurnLeft", false); }
+        else // Le personnage est mort
+        {
+            anim.SetBool("Dead", true);
+        }
     }
+        
 }
