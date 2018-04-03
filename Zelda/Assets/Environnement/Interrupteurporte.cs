@@ -11,7 +11,7 @@ public class Interrupteurporte : MonoBehaviour {
     {
         if (Col.gameObject.tag == "Player")
         {
-            porte.GetComponent<Rigidbody>().useGravity = true;
+            if (porte != null) porte.GetComponent<Rigidbody>().useGravity = true;
             if (monstres != null)
             {
                 monstres.SetActive(true);

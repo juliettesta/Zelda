@@ -6,6 +6,7 @@ public class ApparitionCoffre : MonoBehaviour {
 
     public GameObject basCoffre;
     public GameObject hautCoffre;
+    public GameObject porte;
 
     public GameObject salle2;
     public int nbrmonstre;
@@ -24,6 +25,7 @@ public class ApparitionCoffre : MonoBehaviour {
         {
             basCoffre.SetActive(true);
             hautCoffre.SetActive(true);
+            if (porte != null)  Destroy(porte);
         }
     }
 }
