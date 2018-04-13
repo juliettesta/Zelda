@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CollisionJarre : MonoBehaviour {
 
+    // Si le joueur "casse" une jarre, celle ci disparait
+    // 8/10 chance de faire apparaitre un petit coeur
     public GameObject coeur;
 
     void OnCollisionEnter(Collision Col)
@@ -16,7 +18,6 @@ public class CollisionJarre : MonoBehaviour {
                 coeur.SetActive(true);
             }
             Destroy(gameObject);
-            //Debug.Log("aléatoire : " + rdn);
         }
     }
 }

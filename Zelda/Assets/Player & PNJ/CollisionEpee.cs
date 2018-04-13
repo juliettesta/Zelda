@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollisionEpee : MonoBehaviour {
 
+    //Permet au Player de récupérer l'épée si c'est possible
 
     public Transform player;
     public float distanceDetect = 1.0F;

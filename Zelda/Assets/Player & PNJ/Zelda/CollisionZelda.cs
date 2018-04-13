@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CollisionZelda : MonoBehaviour {
 
+    //Accès à la fin du jeu, lorsque le Player s'approche de Zelda
     public Transform player; 
 
     public float distanceDetect = 2.0F;
@@ -23,8 +24,6 @@ public class CollisionZelda : MonoBehaviour {
         {
             SceneManager.LoadScene("Fin");
         }
-
-
     }
 
     private void CalculDist()

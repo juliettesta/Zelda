@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CollisionPillier : MonoBehaviour {
 
+    //Si le Player "attaque" un pillier, il disparait
+    //Son numéro est transmis au script "cle" pour voir si c'est le bon pillier qui a été activé
     public int numero;
     public GameObject cle;
 

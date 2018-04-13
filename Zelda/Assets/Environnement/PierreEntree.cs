@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PierreEntree : MonoBehaviour {
 
+
+    //Fait disparaitre la Pierre de l'entrée (permettant d'acceder au Temple) si le player possede l'épée
     public GameObject player;
 
 	// Use this for initialization

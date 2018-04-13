@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CollisionPNJ : MonoBehaviour {
 
+    //Permet d'afficher un texte sur l'écran lorsque le Player s'approche du PNJ
     public string parole = "";
     public GameObject fond;
     public GameObject texte;

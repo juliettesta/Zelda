@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CollisionPasserelle : MonoBehaviour
 {
-
+    //Permet de garder la passerelle entre la salle 2 et la salle des pilliers
+    // visible pendant 4s, après elle disparait
     public float startTime = 0.0f;
     public GameObject interrupteur;
 

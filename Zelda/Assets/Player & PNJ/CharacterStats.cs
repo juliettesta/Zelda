@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class characterStats : MonoBehaviour {
 
+    //permet de sauvegarder les stats d'un personnage/monstre
+
     public double maxEnergie;
     public double actuelEnergie { get; set; }
 
@@ -12,10 +14,10 @@ public class characterStats : MonoBehaviour {
         actuelEnergie = maxEnergie;
     }
 
+    //Définie la manière dont le personnnage perd ses points de vie
     public void takeDamage(double damage)
     {
-        actuelEnergie -= damage;
-        //Debug.Log(gameObject.name + " prend " + damage + " dégats");
+        actuelEnergie = actuelEnergie - damage;
         if (actuelEnergie <= 0)
         {
             die();
@@ -24,8 +26,5 @@ public class characterStats : MonoBehaviour {
 
     public virtual void die()
     {
-        //Les monstres disparaissent
-        // Le joueur meurt et affichage de gameover
-        Debug.Log(gameObject.name + " meurt");
     }
 }

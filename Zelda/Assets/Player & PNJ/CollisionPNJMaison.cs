@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CollisionPNJMaison : MonoBehaviour
 {
-
+    //Permet d'afficher un texte sur l'écran lorsque le Player s'approche du PNJ
+    //Le texte change si le Player possede l'épée
     public string parole = "";
     public GameObject fond;
     public GameObject texte;

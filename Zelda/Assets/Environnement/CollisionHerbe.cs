@@ -6,9 +6,10 @@ public class CollisionHerbe : MonoBehaviour {
 
     public GameObject coeur;
     public GameObject Monstre;
-    public GameObject herbe; // inutile?
+    public GameObject herbe;
 
-	
+	//Si le joueur "coupe" une herbe elle disparait et apparrition d'un monstre ou un coeur ou rien 
+    // suivant les probabilités
     void OnCollisionEnter( Collision Col)
     {
         if (Col.gameObject.tag == "PlayerArme")
@@ -23,7 +24,6 @@ public class CollisionHerbe : MonoBehaviour {
                 coeur.SetActive(true);
             }
             Destroy(gameObject);
-            //Debug.Log("aléatoire : " + rdn);
         }
     }
     

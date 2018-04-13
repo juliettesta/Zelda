@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DetectionCible : MonoBehaviour {
 
+    //Permet au monstre de détecter le Player dans une zone plus ou moins proche
+
     private Transform cible;
     public float distanceDetect = 6.0F;
     public float distanceAttack = 1.0F;

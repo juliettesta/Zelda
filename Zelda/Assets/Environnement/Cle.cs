@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cle : MonoBehaviour {
 
+    //Permet de faire tomber la clé si les 6 pilliers sont activés dans le bon ordre
+
     public bool p1;
     public bool p2;
     public bool p3;
@@ -21,7 +23,7 @@ public class Cle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //Debug.Log(num);
+        //Active le booléen si le bon pillier est activé
         if (num == 1 && !p2 && !p3 && !p4 && !p5 && !p6)
         {
             p1 = true;
@@ -47,13 +49,14 @@ public class Cle : MonoBehaviour {
             p6 = true;
         }
 
-        //La clé tombe si les pilliers sont activés dans le bon ordre
+        //La clé tombe si tous les pilliers sont activés dans le bon ordre
         if (p1 && p2 && p3 && p4 && p5 && p6)
         {
             gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
 	}
 
+    //Initialise tous les booléens à false
     public void initialiser()
     {
         p1 = false;

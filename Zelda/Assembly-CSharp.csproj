@@ -53,6 +53,7 @@
      <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csParticleMake.cs" />
      <Compile Include="Assets\Asset à trier\Particle Ingredient Pack\Script\csRotate.cs" />
      <Compile Include="Assets\Environnement\ApparitionCoffre.cs" />
+     <Compile Include="Assets\Environnement\ApparitionSouris.cs" />
      <Compile Include="Assets\Environnement\ChgmtSceneStart.cs" />
      <Compile Include="Assets\Environnement\ChgmtSceneTemple.cs" />
      <Compile Include="Assets\Environnement\Cle.cs" />
@@ -61,6 +62,7 @@
      <Compile Include="Assets\Environnement\CollisionInterrupteur.cs" />
      <Compile Include="Assets\Environnement\CollisionJarre.cs" />
      <Compile Include="Assets\Environnement\CollisionPasserelle.cs" />
+     <Compile Include="Assets\Environnement\CollisionPasserelleTrou.cs" />
      <Compile Include="Assets\Environnement\CollisionPillier.cs" />
      <Compile Include="Assets\Environnement\CollisionPlan.cs" />
      <Compile Include="Assets\Environnement\CollisionPorteBoss.cs" />
@@ -82,8 +84,9 @@
      <Compile Include="Assets\Player &amp; PNJ\CollisionPNJ.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CollisionPNJEntree.cs" />
      <Compile Include="Assets\Player &amp; PNJ\CollisionPNJMaison.cs" />
-     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\ColliderAttackMonstre.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\Boss.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\DetectionCible.cs" />
+     <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\HealthBarBoss.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstersStats.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MonstreCollision.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Scripts Monstres\MouvementMonstre.cs" />
@@ -97,7 +100,6 @@
      <Compile Include="Assets\Player &amp; PNJ\Scripts Player\footSteps.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Zelda\ApparitionZelda.cs" />
      <Compile Include="Assets\Player &amp; PNJ\Zelda\CollisionZelda.cs" />
-     <None Include="Assets\Asset à trier\Models\Key\readME keys.txt" />
      <None Include="Assets\Textures sol ciel\BOXOPHOBIC\Skybox - Cubemap Extended\Shaders\Skybox - Cubemap Extended.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

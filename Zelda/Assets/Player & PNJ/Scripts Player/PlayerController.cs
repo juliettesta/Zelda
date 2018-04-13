@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     //Armes
     public GameObject baton;
     public GameObject epee;
-    public AudioClip sonAttackEpee; //A AJOUTER
+    public AudioClip sonAttackEpee; 
 
     PlayerStats joueur;
 
@@ -55,9 +55,7 @@ public class PlayerController : MonoBehaviour {
             transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * Time.deltaTime * turnSpeed);
             player.Move(directionDeplacement * Time.deltaTime);
 
-            //Faire la marche arrière !!! + ANIMATION
 
-            // METTRE LE BOUCLIER DANS LA MAIN GAUCHE ET IK??
             //Changer Armes
             if (joueur.possedeEpee && !joueur.possedeBaton)
             {
@@ -84,11 +82,9 @@ public class PlayerController : MonoBehaviour {
                         joueur.epee.SetActive(true);
                     }
                 }
-
             }
 
             //ATTAQUE
-            //AJOUTER SON EPEE
             if (Input.GetButtonDown("Fire1"))
             {
                 if (baton.activeSelf == true) anim.SetTrigger("AttackB");
@@ -100,15 +96,12 @@ public class PlayerController : MonoBehaviour {
             }
 
             //Saut
-            if (Input.GetKeyDown(KeyCode.Space) && player.isGrounded) // Input.GetButton("Jump") 
+            if (Input.GetKeyDown(KeyCode.Space) && player.isGrounded) 
             {
-                //directionDeplacement.y = jumpSpeed;
-                transform.Translate(Vector3.up * jumpHigh); // non fluide au départ
+                transform.Translate(Vector3.up * jumpHigh); 
                 anim.SetTrigger("Jump");
                 GetComponent<AudioSource>().PlayOneShot(sonJump);
             }
-
-
 
             //Gravite
             if (!player.isGrounded) directionDeplacement.y -= gravite * Time.deltaTime;
@@ -149,6 +142,5 @@ public class PlayerController : MonoBehaviour {
         {
             anim.SetBool("Dead", true);
         }
-    }
-        
+    }    
 }

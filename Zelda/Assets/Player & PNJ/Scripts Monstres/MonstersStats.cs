@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class MonstersStats : characterStats
 {
- 
-    //Si le monstre meurt, il disparait pendant un certain moment
+    //Regroupe les caractéristiques du monstre
+    public GameObject corpsMonstre;
+    public Shader standard;
+    public Shader texture;
+    public bool monstreRouge = false;
 
-    public void estAttaque()
+    void Start()
     {
-        //JOUER LE SON
-        int damage = Random.Range(0, 11);
-        takeDamage(damage);
-        
+        actuelEnergie = maxEnergie;
+        standard = Shader.Find("Standard");
+        texture = Shader.Find("Unlit/Texture");
     }
 
+    // Peut etre attaqué par le Player de 0 à 10 dégats, il devient rouge à chaque dégats
+    public void estAttaque()
+    {
+        int damage = Random.Range(0, 11);
+        takeDamage(damage);
+        if (corpsMonstre != null)
+        {
+            corpsMonstre.GetComponent<SkinnedMeshRenderer>().material.shader = standard;
+            monstreRouge = true;
+        }
+    }
+
+    //le monstre disparait quand il meurt
     public override void die()
     {
-        // SON QUAND IL MEURT
-        // JOUER l'ANIMATION MORT puis il disparait apres quelques secondes
         Destroy(gameObject);
-        Debug.Log(gameObject.name + " meurt");
     }
 }

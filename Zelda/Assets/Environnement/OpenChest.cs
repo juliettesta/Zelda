@@ -3,6 +3,8 @@ using System.Collections;
 
 public class OpenChest : MonoBehaviour {
 
+    //Script permettant d'animer l'ouverture du coffre
+    //Quand le coffre est ouvert, un objet apparait
     [Range(0.0f, 1.0f)]
     public float factor;
 
@@ -52,7 +54,7 @@ public class OpenChest : MonoBehaviour {
         transform.rotation = Quaternion.Lerp(openedAngle, closedAngle, factor);
 	}
 
-    //You probably want to call this somewhere
+
     void Close()
     {
         closing = true;

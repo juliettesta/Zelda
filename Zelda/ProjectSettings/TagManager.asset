@@ -16,6 +16,7 @@ TagManager:
   - chgmtScene
   - Baton
   - Trou
+  - feu
   layers:
   - Default
   - TransparentFX

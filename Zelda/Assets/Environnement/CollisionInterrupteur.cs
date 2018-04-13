@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class CollisionInterrupteur : MonoBehaviour {
 
-    //private float startTime = 0.0f;
+
+    //Permet d'activer la passerelle entre la salle 2 et la salle des pilliers
+    //Verifie que le Player ne se trouve pas là où doit apparaitre la passerelle
     public GameObject rond;
     public bool passerelle = false;
 
+    public GameObject cylindre;
 
-	// Use this for initialization
-	void Start () {
-        
-    }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnCollisionEnter(Collision Col)
     {
-        if (Col.gameObject.tag == "PlayerArme")
+        if (Col.gameObject.tag == "PlayerArme" && !cylindre.GetComponent<CollisionPasserelleTrou>().dessus)
         {
             passerelle = true;
             rond.SetActive(true);

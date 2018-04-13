@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Interrupteurporte : MonoBehaviour {
 
+    //Fait tomber la porte de la salle 2 et fait apparaitre les monstres
+    // Lorsque le Player entre dans la pièce, c-a-d marche sur l'interrupteur
     public GameObject porte;
     public GameObject monstres;
 

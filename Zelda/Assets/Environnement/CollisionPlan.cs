@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CollisionPlan : MonoBehaviour {
 
+    //Permet d'afficher le plan du labyrinthe quand le Player s'approche de Plan
     public GameObject Plan;
     public Transform player;
-
 
     public float distanceDetect = 2.0F;
     public bool detecter;

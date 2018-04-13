@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CollisionPNJEntree : MonoBehaviour {
 
+
+    //Permet d'afficher un texte sur l'écran lorsque le Player s'approche du PNJ
+       //Le texte change si le Player possede l'épée
     public string parole = "";
     public GameObject fond;
     public GameObject texte;
@@ -30,7 +33,7 @@ public class CollisionPNJEntree : MonoBehaviour {
         {
             if (playerstats.possedeEpee)
             {
-                txt.text = "Fais attention l'gamin, personne n'est jamais revenu du temple de cristal!!";
+                txt.text = "Fais attention gamin, personne n'est jamais revenu du temple de cristal!!";
                 texte.SetActive(true);
                 fond.SetActive(true);
             }        

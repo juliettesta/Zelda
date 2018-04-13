@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AnimationScript : MonoBehaviour {
 
+    //Permet d'animer les petits et gros coeurs
     public bool isAnimated = false;
 
     public bool isRotating = false;

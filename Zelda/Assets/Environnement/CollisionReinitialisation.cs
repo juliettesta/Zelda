@@ -7,6 +7,7 @@ public class CollisionReinitialisation : MonoBehaviour {
     public GameObject cle;
     public GameObject parentPilliers;
 
+    //Permet de faire apparaitre tous les pilliers et réinitialiser les booléens
     void OnCollisionEnter(Collision Col)
     {
         if (Col.gameObject.tag == "PlayerArme")

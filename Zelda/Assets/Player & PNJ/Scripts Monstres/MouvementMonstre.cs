@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MouvementMonstre : MonoBehaviour {
 
+    //Animation du monstre suivant ses actions
     public Transform player;
     private Transform maTransform;
     private UnityEngine.AI.NavMeshAgent agent;
@@ -24,7 +25,6 @@ public class MouvementMonstre : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
         //Initialisation du script NavMeshAgent qui se trouve sur le même objet que ce script
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         pause = false;
@@ -35,6 +35,7 @@ public class MouvementMonstre : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //Le monstre attaque toutes les 2 et 4s
         if (attack)
         {
             if (startTime + temps < Time.time)
@@ -49,10 +50,12 @@ public class MouvementMonstre : MonoBehaviour {
                 miseEnAttente();
             }
         }
+        //le monstre détecte et suit le Joueur
         else if (poursuite)
         {
             mouvement();
         }
+        //le monstre ne "voit" plus le joueur
         else if (poursuite == false)
         {
             miseEnAttente();
@@ -65,16 +68,13 @@ public class MouvementMonstre : MonoBehaviour {
     {
         Debug.DrawLine(player.transform.position, maTransform.position, Color.blue);
         anim.SetBool("Walk", true);
-        agent.destination = player.position;//le squelette se dirige vers le joueur
+        agent.destination = player.position;//le monstre se dirige vers le joueur
     }
 
     //L'ennemi reste a sa position actuelle
     private void miseEnAttente()
     {
-        //Debug.Log("arret ok");
         anim.SetBool("Walk", false);
         agent.destination = transform.position;
     }
-
-
 }

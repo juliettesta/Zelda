@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tir : MonoBehaviour {
 
-    //Permet au personnage de tirer avec le baton magique
+    //Permet au personnage de tirer avec le baton magique, création des balles
     public GameObject Projectile;
     public int force = 20;
     public AudioClip sonTir;
@@ -23,8 +23,8 @@ public class Tir : MonoBehaviour {
         {
             GetComponent<AudioSource>().PlayOneShot(sonTir);
             GameObject Bullet = Instantiate(Projectile, transform.position, Quaternion.identity) as GameObject;
-            Bullet.GetComponent<Rigidbody>().velocity = transform.forward * force; //transform.TransformDirection(Vector3.forward) *force
-            Destroy(Bullet,3f); //Destruction des balles après 2s
+            Bullet.GetComponent<Rigidbody>().velocity = transform.forward * force; 
+            Destroy(Bullet,3f); //Destruction des balles après 3s
         }
     }
 

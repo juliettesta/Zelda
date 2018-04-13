@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class destroyBullet : MonoBehaviour {
 
-
+    //Detruit la balle lorsqu'elle entre en collision
     void OnCollisionEnter(Collision Col)
     {
-        //Debug.Log("collision ok");
         Destroy(gameObject);
     }
 }

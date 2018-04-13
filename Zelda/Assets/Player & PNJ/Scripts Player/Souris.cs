@@ -5,7 +5,8 @@ using UnityEngine;
 public class Souris : MonoBehaviour {
 
     //Permet de cacher le curseur de la souris lorsqu'on joue, echappe pour la faire apparaitre.
-	// Use this for initialization
+	
+        // Use this for initialization
 	void Start () {
         Cursor.lockState = CursorLockMode.Locked;
 	}

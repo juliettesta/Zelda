@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerStats : characterStats {
 
+
+    //Correspond à tous les données du Player
     public bool possedeCle = false;
     public bool possedeEpee = false;
     public bool possedeBaton = false;
@@ -26,7 +28,7 @@ public class PlayerStats : characterStats {
 
     public GameObject parentCanvas;
     public GameObject imageRef;
-    
+    public AudioClip sonAttaque;
 
     void Start()
     {
@@ -44,6 +46,7 @@ public class PlayerStats : characterStats {
         maxCoeur = GlobalControl.Instance.maxCoeur;
 
         //Création de la vie maxmimale
+        //Coeur transparent
         for (int i = 0; i < maxEnergie; i++)
         {
             coeur.transform.position = new Vector3(25.7F + 40 * i, imageRef.transform.position.y, 0F);
@@ -68,7 +71,7 @@ public class PlayerStats : characterStats {
             newCoeur.name = "coeur" + (i + 1);
         }
 
-        //Ajustement afficgae vie actuelle
+        //Ajustement affichage vie actuelle
         double k = maxEnergie;
         while ( k > actuelEnergie)
         {
@@ -103,6 +106,7 @@ public class PlayerStats : characterStats {
 
     void Update()
     { 
+        //Affichage
         if (enVie)
         {
             // Ajout d'un gros coeur
@@ -112,7 +116,6 @@ public class PlayerStats : characterStats {
             }
         }
         
-
         // Armes et Cle
         if (possedeEpee) epeeTrans.SetActive(true);
         else
@@ -137,15 +140,10 @@ public class PlayerStats : characterStats {
         {
             cle.SetActive(false);
         }
-
-
-
     }
 
     public void ajoutGrosCoeur()
     {
-        //Nbr de Gros coeur
-        
             //L'énergie du player est au maximum
             for (int i = 0; i < maxCoeur; i++)
             {
@@ -159,8 +157,7 @@ public class PlayerStats : characterStats {
 
         //Ajout d'un nouveau coeur
 
-        //Coeur trans
-
+            //Coeur trans
             coeur.transform.position = new Vector3(25.7F + 40 * (float)maxCoeur, imageRef.transform.position.y, 0F);
             GameObject newCoeurTrans = Instantiate(coeurTrans, coeur.transform.position, Quaternion.identity) as GameObject;
             newCoeurTrans.transform.SetParent(parentCanvas.transform);
@@ -179,12 +176,13 @@ public class PlayerStats : characterStats {
             maxCoeur = maxEnergie;
         
     }
+
     public void estAttaque()
     {
         if (enVie)
         {
             takeDamage(0.5);
-            //JOUER LE SON
+            GetComponent<AudioSource>().PlayOneShot(sonAttaque);
             //Affichage
             if (actuelEnergie % 1 == 0) // Si la vie actuelle est entière
             {
@@ -202,8 +200,6 @@ public class PlayerStats : characterStats {
     public override void die()
     {
         enVie = false;
-        //SON QUAND IL MEURT
-        Debug.Log(gameObject.name + "meurt");
     }
 
 }

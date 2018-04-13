@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 1166695217}
   - component: {fileID: 1166695219}
   - component: {fileID: 1166695218}
+  - component: {fileID: 1166695220}
   m_Layer: 5
   m_Name: Fond
   m_TagString: Untagged
@@ -499,6 +500,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1166695216}
+--- !u!114 &1166695220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1166695216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defbf6a727e5b7a4bac80acccde02052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1513730946
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,8 +801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 29}
-  m_SizeDelta: {x: 376, y: 108}
+  m_AnchoredPosition: {x: 17, y: 40}
+  m_SizeDelta: {x: 410, y: 131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927762392
 MonoBehaviour:
@@ -813,10 +825,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -825,7 +837,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "A ton retour, le roi te nomma chevalier. Zelda te remercia du fond du coeur
-    et t'offrit une \xE9p\xE9e, la plus belle que tu n'avais jamais vu.\n\nLe soir
+    et t'offrit une \xE9p\xE9e, la plus belle que tu n'aies jamais vue.\n\nLe soir
     m\xEAme, Hyrule fit une f\xEAte en ton honneur. Tu t'endormis \xE9puis\xE9 apr\xE8s
     une bonne part de g\xE2teau.\n\n"
 --- !u!222 &1927762393

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GlobalControl : MonoBehaviour {
 
+    //Permet de sauvegarder les stats du Player d'une scène à l'autre
     public static GlobalControl Instance;
 
     public bool possedeCle = false;

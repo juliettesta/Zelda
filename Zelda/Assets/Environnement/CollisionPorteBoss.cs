@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionPorteBoss : MonoBehaviour {
 
-
+    //Ouvre la porte du boss si le Player s'approche de la porte avec la Clé
     public Transform player;
     public GameObject porte;
 
